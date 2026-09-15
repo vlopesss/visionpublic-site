@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>VisionPublic</title>
 
     <style>
@@ -22,12 +23,13 @@
         .hero {
             padding: 80px 20px;
             text-align: center;
-            background: #fff;
+            background: #ffffff;
         }
 
         .hero img {
             width: 220px;
             max-width: 90%;
+            height: auto;
         }
 
         .hero h1 {
@@ -45,34 +47,41 @@
             margin-top: 25px;
             padding: 14px 28px;
             background: #00a6ff;
-            color: #fff;
+            color: #ffffff;
             border: none;
             border-radius: 10px;
             font-weight: bold;
             cursor: pointer;
             font-size: 1rem;
-            transition: 0.3s;
+            transition: background-color 0.3s ease;
         }
 
         .btn:hover {
             background: #0088d1;
         }
 
+        .btn:focus-visible {
+            outline: 3px solid #003366;
+            outline-offset: 3px;
+        }
+
         .contact-box {
             display: none;
-            margin-top: 20px;
+            margin: 20px auto 0;
             padding: 15px;
             background: #eef6ff;
             border-radius: 10px;
             max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .contact-box a {
             color: #003366;
             font-weight: bold;
             text-decoration: none;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
         }
 
         .features {
@@ -85,10 +94,10 @@
 
         .card {
             width: 260px;
-            background: white;
+            background: #ffffff;
             padding: 25px;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
         .card h3 {
@@ -97,99 +106,173 @@
 
         .values {
             text-align: center;
-            padding: 40px;
+            padding: 40px 20px;
             background: #eef6ff;
         }
 
         footer {
             background: #003366;
-            color: white;
-            padding: 30px;
+            color: #ffffff;
+            padding: 30px 20px;
             text-align: center;
         }
 
         footer p {
             margin: 5px 0;
         }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 50px 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.05rem;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 360px;
+            }
+
+            .values h2 {
+                font-size: 1.3rem;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <section class="hero">
+    <main>
 
-        <img src="Designer.png" alt="VisionPublic">
+        <section class="hero">
 
-        <h1>VisionPublic</h1>
+            <img src="Designer.png" alt="Logomarca VisionPublic">
 
-        <p>Informação segura em um só lugar</p>
+            <h1>VisionPublic</h1>
 
-        <button class="btn" onclick="mostrarContato()">
-            Entrar em contato
-        </button>
+            <p>Informação segura em um só lugar</p>
 
-        <div id="contato" class="contact-box">
-            <p><strong>E-mail:</strong></p>
-            <p>
-                <a href="mailto:contato@visionpublic.app.br?VisionPublic
-                    contato@visionpublic.app.br
-                </a>
-            </p>
-        </div>
+            <button
+                type="button"
+                class="btn"
+                id="botaoContato"
+                onclick="mostrarContato()"
+                aria-controls="contato"
+                aria-expanded="false"
+            >
+                Entrar em contato
+            </button>
 
-    </section>
+            <div
+                id="contato"
+                class="contact-box"
+                aria-hidden="true"
+            >
+                <p><strong>E-mail:</strong></p>
 
-    <section class="features">
+                <p>
+                    <a href="mailto:contato@visionpublic.app.br">
+                        contato@visionpublic.app.br
+                    </a>
+                </p>
+            </div>
 
-        <div class="card">
-            <h3>QR Code Seguro</h3>
-            <p>Compartilhe informações com segurança e criptografia.</p>
-        </div>
+        </section>
 
-        <div class="card">
-            <h3>Credenciais</h3>
-            <p>Centralize documentos e identificações.</p>
-        </div>
+        <section class="features" aria-label="Funcionalidades">
 
-        <div class="card">
-            <h3>Contato Inteligente</h3>
-            <p>Telefone, e-mail, links e muito mais.</p>
-        </div>
+            <div class="card">
+                <h3>QR Code Seguro</h3>
+                <p>
+                    Compartilhe informações com segurança e criptografia.
+                </p>
+            </div>
 
-        <div class="card">
-            <h3>PIX</h3>
-            <p>Compartilhamento simples e rápido.</p>
-        </div>
+            <div class="card">
+                <h3>Credenciais</h3>
+                <p>
+                    Centralize documentos e identificações.
+                </p>
+            </div>
 
-        <div class="card">
-            <h3>Eventos</h3>
-            <p>Divulgação prática através do QR Code.</p>
-        </div>
+            <div class="card">
+                <h3>Contato Inteligente</h3>
+                <p>
+                    Telefone, e-mail, links e muito mais.
+                </p>
+            </div>
 
-        <div class="card">
-            <h3>Privacidade</h3>
-            <p>Controle total sobre seus dados.</p>
-        </div>
+            <div class="card">
+                <h3>PIX</h3>
+                <p>
+                    Compartilhamento simples e rápido.
+                </p>
+            </div>
 
-    </section>
+            <div class="card">
+                <h3>Eventos</h3>
+                <p>
+                    Divulgação prática através do QR Code.
+                </p>
+            </div>
 
-    <section class="values">
-        <h2>Privacidade • Praticidade • Confiança</h2>
-    </section>
+            <div class="card">
+                <h3>Privacidade</h3>
+                <p>
+                    Controle total sobre seus dados.
+                </p>
+            </div>
+
+        </section>
+
+        <section class="values">
+            <h2>Privacidade • Praticidade • Confiança</h2>
+        </section>
+
+    </main>
 
     <footer>
-        <p>contato@visionpublic.app.br</p>
+
+        <p>
+            <a href="mailto:contato@visionpublic.app.br">
+                contato@visionpublic.app.br
+            </a>
+        </p>
+
         <p>visionpublic.app.br</p>
+
     </footer>
 
     <script>
         function mostrarContato() {
             const contato = document.getElementById("contato");
+            const botao = document.getElementById("botaoContato");
 
-            if (contato.style.display === "block") {
+            const estaAberto = contato.style.display === "block";
+
+            if (estaAberto) {
                 contato.style.display = "none";
+                contato.setAttribute("aria-hidden", "true");
+                botao.setAttribute("aria-expanded", "false");
             } else {
                 contato.style.display = "block";
+                contato.setAttribute("aria-hidden", "false");
+                botao.setAttribute("aria-expanded", "true");
             }
         }
     </script>
