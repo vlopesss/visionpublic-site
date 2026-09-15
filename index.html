@@ -2,169 +2,198 @@
 <html lang="pt-BR">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionPublic</title>
 
-<title>VisionPublic</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f5f9fc;
+            color: #003366;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+        .hero {
+            padding: 80px 20px;
+            text-align: center;
+            background: #fff;
+        }
 
-body{
-font-family:Segoe UI,Arial,sans-serif;
-background:#f5f9fc;
-color:#003366;
-}
+        .hero img {
+            width: 220px;
+            max-width: 90%;
+        }
 
-.hero{
-padding:80px 20px;
-text-align:center;
-background:white;
-}
+        .hero h1 {
+            font-size: 3rem;
+            margin-top: 20px;
+        }
 
-.hero img{
-width:220px;
-max-width:90%;
-}
+        .hero p {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
 
-.hero h1{
-font-size:3rem;
-margin-top:20px;
-}
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 28px;
+            background: #00a6ff;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
 
-.hero p{
-margin-top:10px;
-font-size:1.2rem;
-}
+        .btn:hover {
+            background: #0088d1;
+        }
 
-.btn{
-display:inline-block;
-margin-top:25px;
-padding:14px 28px;
-background:#00a6ff;
-color:white;
-text-decoration:none;
-border-radius:10px;
-font-weight:bold;
-}
+        .contact-box {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #eef6ff;
+            border-radius: 10px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-.features{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-padding:50px 20px;
-}
+        .contact-box a {
+            color: #003366;
+            font-weight: bold;
+            text-decoration: none;
+        }
 
-.card{
-width:260px;
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 4px 12px rgba(0,0,0,.08);
-}
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 50px 20px;
+        }
 
-.card h3{
-margin-bottom:10px;
-}
+        .card {
+            width: 260px;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+        }
 
-.values{
-text-align:center;
-padding:40px;
-background:#eef6ff;
-}
+        .card h3 {
+            margin-bottom: 10px;
+        }
 
-footer{
-background:#003366;
-color:white;
-padding:30px;
-text-align:center;
-}
+        .values {
+            text-align: center;
+            padding: 40px;
+            background: #eef6ff;
+        }
 
-footer a{
-color:#6ff;
-}
+        footer {
+            background: #003366;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
 
-</style>
-
+        footer p {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 
 <body>
 
-<section class="hero">
+    <section class="hero">
 
-<img src="logo.png" alt="VisionPublic">
+        <img src="logo.png" alt="VisionPublic">
 
-<h1>VisionPublic</h1>
+        <h1>VisionPublic</h1>
 
-<p>
-Informação segura em um só lugar
-</p>
+        <p>Informação segura em um só lugar</p>
 
-<a class="btn" href="mailto:contato@visionpublic.app.br">
-Entrar em contato
-</a>
+        <button class="btn" onclick="mostrarContato()">
+            Entrar em contato
+        </button>
 
-</section>
+        <div id="contato" class="contact-box">
+            <p><strong>E-mail:</strong></p>
+            <p>
+                <a href="mailto:contato@visionpublic.app.br?VisionPublic
+                    contato@visionpublic.app.br
+                </a>
+            </p>
+        </div>
 
-<section class="features">
+    </section>
 
-<div class="card">
-<h3>QR Code Seguro</h3>
-<p>Compartilhe informações com segurança e criptografia.</p>
-</div>
+    <section class="features">
 
-<div class="card">
-<h3>Credenciais</h3>
-<p>Centralize documentos e identificações.</p>
-</div>
+        <div class="card">
+            <h3>QR Code Seguro</h3>
+            <p>Compartilhe informações com segurança e criptografia.</p>
+        </div>
 
-<div class="card">
-<h3>Contato Inteligente</h3>
-<p>Telefone, e-mail, links e muito mais.</p>
-</div>
+        <div class="card">
+            <h3>Credenciais</h3>
+            <p>Centralize documentos e identificações.</p>
+        </div>
 
-<div class="card">
-<h3>PIX</h3>
-<p>Compartilhamento simples e rápido.</p>
-</div>
+        <div class="card">
+            <h3>Contato Inteligente</h3>
+            <p>Telefone, e-mail, links e muito mais.</p>
+        </div>
 
-<div class="card">
-<h3>Eventos</h3>
-<p>Divulgação prática através do QR Code.</p>
-</div>
+        <div class="card">
+            <h3>PIX</h3>
+            <p>Compartilhamento simples e rápido.</p>
+        </div>
 
-<div class="card">
-<h3>Privacidade</h3>
-<p>Controle total sobre seus dados.</p>
-</div>
+        <div class="card">
+            <h3>Eventos</h3>
+            <p>Divulgação prática através do QR Code.</p>
+        </div>
 
-</section>
+        <div class="card">
+            <h3>Privacidade</h3>
+            <p>Controle total sobre seus dados.</p>
+        </div>
 
-<section class="values">
+    </section>
 
-<h2>
-Privacidade • Praticidade • Confiança
-</h2>
+    <section class="values">
+        <h2>Privacidade • Praticidade • Confiança</h2>
+    </section>
 
-</section>
+    <footer>
+        <p>contato@visionpublic.app.br</p>
+        <p>visionpublic.app.br</p>
+    </footer>
 
-<footer>
+    <script>
+        function mostrarContato() {
+            const contato = document.getElementById("contato");
 
-<p>
-contato@visionpublic.app.br
-</p>
-
-<p>
-visionpublic.app.br
-</p>
-
-</footer>
+            if (contato.style.display === "block") {
+                contato.style.display = "none";
+            } else {
+                contato.style.display = "block";
+            }
+        }
+    </script>
 
 </body>
+
 </html>
