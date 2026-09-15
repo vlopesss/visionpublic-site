@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta
+        name="description"
+        content="VisionPublic - Informação segura em um só lugar."
+    >
+
     <title>VisionPublic</title>
 
     <style>
@@ -20,6 +25,10 @@
             color: #003366;
         }
 
+        /* =========================
+           HERO
+        ========================= */
+
         .hero {
             padding: 80px 20px;
             text-align: center;
@@ -33,8 +42,8 @@
         }
 
         .hero h1 {
-            font-size: 3rem;
             margin-top: 20px;
+            font-size: 3rem;
         }
 
         .hero p {
@@ -42,22 +51,46 @@
             font-size: 1.2rem;
         }
 
+        /* =========================
+           BOTÃO
+        ========================= */
+
         .btn {
             display: inline-block;
             margin-top: 25px;
             padding: 14px 28px;
+
             background: #00a6ff;
             color: #ffffff;
+
             border: none;
             border-radius: 10px;
-            font-weight: bold;
-            cursor: pointer;
+
             font-size: 1rem;
-            transition: background-color 0.3s ease;
+            font-weight: bold;
+
+            text-decoration: none;
+            cursor: pointer;
+
+            transition:
+                background-color 0.3s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
         }
 
         .btn:hover {
             background: #0088d1;
+            color: #ffffff;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 6px 14px
+                rgba(0, 51, 102, 0.18);
+        }
+
+        .btn:active {
+            transform: translateY(0);
         }
 
         .btn:focus-visible {
@@ -65,55 +98,80 @@
             outline-offset: 3px;
         }
 
-        .contact-box {
-            display: none;
-            margin: 20px auto 0;
-            padding: 15px;
-            background: #eef6ff;
-            border-radius: 10px;
-            max-width: 400px;
-        }
-
-        .contact-box a {
-            color: #003366;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .contact-box a:hover {
-            text-decoration: underline;
-        }
+        /* =========================
+           FUNCIONALIDADES
+        ========================= */
 
         .features {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+
             gap: 20px;
+
             padding: 50px 20px;
         }
 
         .card {
             width: 260px;
-            background: #ffffff;
+
             padding: 25px;
+
+            background: #ffffff;
+
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+            box-shadow:
+                0 4px 12px
+                rgba(0, 0, 0, 0.08);
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 8px 18px
+                rgba(0, 0, 0, 0.10);
         }
 
         .card h3 {
             margin-bottom: 10px;
         }
 
+        .card p {
+            line-height: 1.5;
+        }
+
+        /* =========================
+           VALORES
+        ========================= */
+
         .values {
-            text-align: center;
             padding: 40px 20px;
+
+            text-align: center;
+
             background: #eef6ff;
         }
 
+        .values h2 {
+            font-size: 1.6rem;
+        }
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
         footer {
+            padding: 30px 20px;
+
             background: #003366;
             color: #ffffff;
-            padding: 30px 20px;
+
             text-align: center;
         }
 
@@ -130,9 +188,18 @@
             text-decoration: underline;
         }
 
+        /* =========================
+           RESPONSIVIDADE
+        ========================= */
+
         @media (max-width: 600px) {
+
             .hero {
                 padding: 50px 20px;
+            }
+
+            .hero img {
+                width: 180px;
             }
 
             .hero h1 {
@@ -141,6 +208,10 @@
 
             .hero p {
                 font-size: 1.05rem;
+            }
+
+            .btn {
+                padding: 13px 24px;
             }
 
             .card {
@@ -159,123 +230,151 @@
 
     <main>
 
+        <!-- =========================
+             APRESENTAÇÃO
+        ========================== -->
+
         <section class="hero">
 
-            <img src="Designer.png" alt="Logomarca VisionPublic">
+            <img
+                src="Designer.png"
+                alt="Logomarca VisionPublic"
+            >
 
             <h1>VisionPublic</h1>
 
-            <p>Informação segura em um só lugar</p>
+            <p>
+                Informação segura em um só lugar
+            </p>
 
-            <button
-                type="button"
+            <!--
+                Ao clicar, o navegador solicita
+                a abertura do aplicativo de e-mail
+                padrão do dispositivo.
+            -->
+
+            <a
                 class="btn"
-                id="botaoContato"
-                onclick="mostrarContato()"
-                aria-controls="contato"
-                aria-expanded="false"
+                href="mailto:contato@visionpublic.app.br?subject=Contato%20-%20VisionPublic&body=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20VisionPublic."
             >
                 Entrar em contato
-            </button>
-
-            <div
-                id="contato"
-                class="contact-box"
-                aria-hidden="true"
-            >
-                <p><strong>E-mail:</strong></p>
-
-                <p>
-                    <a href="mailto:contato@visionpublic.app.br">
-                        contato@visionpublic.app.br
-                    </a>
-                </p>
-            </div>
+            </a>
 
         </section>
 
-        <section class="features" aria-label="Funcionalidades">
+
+        <!-- =========================
+             FUNCIONALIDADES
+        ========================== -->
+
+        <section
+            class="features"
+            aria-label="Funcionalidades do VisionPublic"
+        >
 
             <div class="card">
+
                 <h3>QR Code Seguro</h3>
+
                 <p>
-                    Compartilhe informações com segurança e criptografia.
+                    Compartilhe informações com segurança
+                    e criptografia.
                 </p>
+
             </div>
 
+
             <div class="card">
+
                 <h3>Credenciais</h3>
+
                 <p>
                     Centralize documentos e identificações.
                 </p>
+
             </div>
 
+
             <div class="card">
+
                 <h3>Contato Inteligente</h3>
+
                 <p>
                     Telefone, e-mail, links e muito mais.
                 </p>
+
             </div>
 
+
             <div class="card">
+
                 <h3>PIX</h3>
+
                 <p>
                     Compartilhamento simples e rápido.
                 </p>
+
             </div>
 
+
             <div class="card">
+
                 <h3>Eventos</h3>
+
                 <p>
                     Divulgação prática através do QR Code.
                 </p>
+
             </div>
 
+
             <div class="card">
+
                 <h3>Privacidade</h3>
+
                 <p>
                     Controle total sobre seus dados.
                 </p>
+
             </div>
 
         </section>
 
+
+        <!-- =========================
+             VALORES
+        ========================== -->
+
         <section class="values">
-            <h2>Privacidade • Praticidade • Confiança</h2>
+
+            <h2>
+                Privacidade • Praticidade • Confiança
+            </h2>
+
         </section>
 
     </main>
 
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
     <footer>
 
         <p>
-            <a href="mailto:contato@visionpublic.app.br">
+            <a
+                href="mailto:contato@visionpublic.app.br?subject=Contato%20-%20VisionPublic"
+            >
                 contato@visionpublic.app.br
             </a>
         </p>
 
-        <p>visionpublic.app.br</p>
+        <p>
+            visionpublic.app.br
+        </p>
 
     </footer>
-
-    <script>
-        function mostrarContato() {
-            const contato = document.getElementById("contato");
-            const botao = document.getElementById("botaoContato");
-
-            const estaAberto = contato.style.display === "block";
-
-            if (estaAberto) {
-                contato.style.display = "none";
-                contato.setAttribute("aria-hidden", "true");
-                botao.setAttribute("aria-expanded", "false");
-            } else {
-                contato.style.display = "block";
-                contato.setAttribute("aria-hidden", "false");
-                botao.setAttribute("aria-expanded", "true");
-            }
-        }
-    </script>
 
 </body>
 
